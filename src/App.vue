@@ -3,12 +3,8 @@ export default {
   name: 'printer',
   methods: {
     async getPrinters() {
-      await fetch('http://localhost:3000/printers', {
-        method: 'GET',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' }
-      })
-        .then((res) => res.json())
+      return await fetch('http://localhost:3000/printers', { mode: 'no-cors' })
+        .then((res) => res)
         .catch((err) => err);
     },
 
